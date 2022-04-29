@@ -1,13 +1,21 @@
+import faker from '@faker-js/faker'
 import React from 'react'
 import ReactDOM  from 'react-dom'
+import CommentDetail from './components/CommentDetail'
+import ApprovalCard from './components/ApprovalCard'
 
 const App = () => {
-    const buttonText = 'click me!'
     return (
-        <div>
-            <label className="label" htmlFor="name">Enter name:</label>
-            <input id="name" type="text" />
-            <button style={{backgroundColor: 'blue', color: 'white'}}>{buttonText}</button>
+        <div className='ui containter comments'>
+            <ApprovalCard>
+                <CommentDetail name='alex' comment='sick' time='Today at 4:55pm' avatar={faker.image.avatar()}/>
+            </ApprovalCard>
+            <ApprovalCard>
+                <CommentDetail name='john' comment='cool' time='Today at 5:30pm' avatar={faker.image.avatar()}/>
+            </ApprovalCard>
+            <ApprovalCard>
+                <CommentDetail name='mary' comment='dope' time='Today at 2:00pm' avatar={faker.image.avatar()}/>
+            </ApprovalCard>
         </div>
     )
 }
